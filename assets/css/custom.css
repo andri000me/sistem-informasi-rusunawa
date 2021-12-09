@@ -1,0 +1,347 @@
+/*FORM LOGIN*/
+.bg-login{
+  background-image: url('../img/undip/bg-undip-besar.jpg');
+  height: 100%;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  position: fixed;
+  background-size: cover;
+  left: 0;
+  background-position: center;
+  right: 0;
+  display: block;
+  width: auto;
+  height: 100%;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+form#login-form, form#register-form, form#changepass-form{
+  overflow: hidden;
+  position: relative;
+}
+
+.login-parent{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.login-parent form{
+  min-width: 400px;
+}
+
+.login-title1{
+  font-weight: bold;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.login-title2{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.register-parent, .changepass-parent{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.register-parent form, .changepass-parent form{
+  min-width: 400px;
+}
+
+.register-title1{
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  width: 100%;
+  padding: 0 20% 0 20%;
+}
+
+.changepass-title1{
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  width: 100%;
+  padding: 0 10% 0 10%;
+}
+
+/*CAROUSEL*/
+.carousel-item{
+  height: 265px;
+}
+
+.carousel-item img{
+  width: auto important!;
+}
+
+.carousel-caption{
+  position: absolute;
+  right: 15%;
+  bottom: 70px;
+  left: 5%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color:
+  #fff;
+  text-align: left;
+}
+
+.view{
+  position:relative;
+  overflow:hidden;
+  cursor:default;
+}
+
+.view .mask{
+  position:absolute;
+  top:0;
+  overflow:hidden;
+  width:100%;
+  height:100%;
+  background-attachment:fixed;
+}
+
+.view img{
+  position:relative;
+  display:block;
+  vertical-align: middle;
+}
+
+.rgba-black-slight,.rgba-black-slight:after{
+  background-color:rgba(0,0,0,.1);
+}
+
+.rgba-black-light,.rgba-black-light:after{
+  background-color:rgba(0,0,0,.3);
+}
+
+.rgba-black-strong,.rgba-black-strong:after{
+  background-color:rgba(0,0,0,.7);
+}
+
+.big-brand1{
+  font-weight: bolder;
+  font-size: 43px;
+}
+
+.big-brand2{
+  font-size: 33px;
+  font-weight: 600;
+}
+
+
+/*SUMMARY GEDUNG*/
+.col-sum{
+  display: inline-block;
+  max-width: 49.7% !important;
+}
+
+.sum-gedung{
+  width: 115px;
+  margin-bottom: 0;
+}
+
+.icon-gedung{
+  width: 16%;
+}
+
+.widget-stat .sum-kamar{
+  padding: 12px 12px;
+}
+
+/*ICON BACKGROUND*/
+.media-body{
+  padding-left: 10px;
+}
+
+.icon-bg1{
+  color: #1ba0e285;
+}
+
+.icon-bg2{
+  color: #1ba0e2;
+}
+
+.icon-bg3{
+  color: #615255;
+}
+
+/*LEGENDA*/
+.legenda{
+  /* display: inline-flex; */
+}
+
+.satu-legenda {
+  /* margin-inline: 20px;
+  float: left; */
+  display: -webkit-inline-box;
+  margin: 5px 20px 5px 20px;
+}
+
+.satu-legenda span{
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.kotak-l{
+  width: 23px;
+  height: 23px;
+  border-radius: 4px;
+}
+
+/*DENAH KAMAR*/
+.kamar{
+  color: #4a4e4d;
+  width: 64px;
+  height: 34px;
+  border-radius: 4px;
+  position: relative;
+  margin: 4px;
+  text-align: center;
+  line-height: 35px;
+  display: inline-block;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Opera and Firefox */
+}
+
+.kamar:hover{
+  background-color: #1ba0e285;
+  box-shadow: 0 0 0 0;
+}
+
+.kosong {
+  box-shadow: 0 0 0 2px #1ba0e2 inset;
+}
+
+.terisi1 {
+  background-color: #ffbc34;
+  color: #444645;
+}
+
+.terisi2 {
+  background-color: #df193d;
+  color: #fff
+}
+
+.sendiri{
+  background-color: #19cf13;
+}
+
+.piutang {
+  box-shadow: 0 0 0 2px #615255 inset;
+}
+
+.terpilih {
+  background-color: #1ba0e2;
+}
+
+/*BUTTON DATA PENGHUNI*/
+#tambah_penghuni, #tambah_penghuni2{
+  margin-inline-end: 3px;
+  border-radius: 3px;
+  color: #fff
+}
+
+.perpanjang, .perpanjang2 {
+  margin-inline-start: 3px !important;
+  margin-inline-end: 3px;
+  border-radius: 3px !important;
+  color: #fff
+}
+
+#edit_penghuni, #edit_penghuni2, .eks_penghuni, .eks_penghuni2 {
+  border-radius: 3px !important;
+  margin-left: 0px !important;
+  color: #fff
+}
+
+/*NAVBAR UNDIP*/
+  .nav-undip {
+    padding-left: 0 !important;
+    vertical-align: middle;
+  }
+
+/*EDIT PENGHUNI*/
+  .btn-edit-penghuni{
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+
+  }
+
+  .foto-awal {
+    opacity: 0.5;
+    width: 120%;
+    max-width: 200%;
+    height: auto;
+  }
+
+  .st {
+    position: fixed;
+  }
+
+  .statichehe {
+    position: relative;
+    padding-top:500px;
+  }
+
+  .tulisan-foto-dalam {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #595959;
+
+  }
+
+  .foto-doni {
+    position: absolute;
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+/*Button XLS*/
+  .btn-xls{
+    margin-right: 16px;
+  }
+
+/*AKSI TABEL*/
+  .btn + .riwayat-bayar, .edit-huni, .hapus-penghuni, .detail-penghuni, .edit-riwayat, .hapus-pembayaran{
+    margin-bottom: 4px;
+  }
+
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: "/" !important; 
+  }
+
+  .bc-label-active{
+    color: #009efb;
+    font-weight: bold;
+  }
+
+  #tabel-user_wrapper, #tabel-penghuni_wrapper, #tabel-responsif_wrapper{
+    overflow-x: auto;
+  }

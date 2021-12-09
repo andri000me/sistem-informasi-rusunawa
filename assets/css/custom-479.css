@@ -1,0 +1,35 @@
+@media (max-width: 479px) {
+  /*CAROUSEL*/
+  .carousel-item{
+    height: 100%;
+  }
+  
+  /*SUMMARY GEDUNG*/
+  .col-sum {
+    display: inline-block;
+    max-width: 100% !important;
+  }
+  
+  .big-brand1{
+    font-weight: bolder;
+    font-size: 13px;
+  }
+  
+  .big-brand2{
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .carousel-caption{
+    position: absolute;
+    right: 15%;
+    bottom: 0;
+    left: 5%;
+    z-index: 10;
+    padding-top: 0;
+    padding-bottom: 0;
+    color:
+    #fff;
+    text-align: left;
+  }
+}
