@@ -26,15 +26,25 @@
                         </a>
                     </li>
                     <li>
-                        <a <?php if ($judul_halaman == 'Daftar Kamar') echo 'class="active"' ?> href="<?php echo base_url('daftar-kamar') ?>"><i class="sidebar-item-icon fa fa-th-list"></i>
+                        <a <?php if ($judul_halaman == 'Daftar Kamar') echo 'class="active"' ?> href="<?php echo base_url('daftar-kamar') ?>"><i class="sidebar-item-icon fa fa-list"></i>
                             <span class="nav-label">Daftar Kamar</span>
                         </a>
                     </li>
                     <li>
+                        <a <?php if ($judul_halaman == 'Daftar Gedung') echo 'class="active"' ?> href="<?php echo base_url('daftar-gedung') ?>"><i class="sidebar-item-icon fa fa-th-list"></i>
+                            <span class="nav-label">Daftar Gedung</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a <?php if ($judul_halaman == 'Daftar Tipe Kamar') echo 'class="active"' ?> href="<?php echo base_url('daftar-tipe') ?>"><i class="sidebar-item-icon fa fa-th-list"></i>
+                            <span class="nav-label">Daftar Tipe Kamar</span>
+                        </a>
+                    </li>
+                    <!-- <li>
                         <a <?php if ($judul_halaman == 'Daftar Harga Kamar') echo 'class="active"' ?> href="<?php echo base_url('daftar-harga') ?>"><i class="sidebar-item-icon fa fa-dollar"></i>
                             <span class="nav-label">Daftar Harga Kamar</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="heading">PENGHUNI</li>
                     <li>
                         <a <?php if ($judul_halaman == 'Daftar Penghuni') echo 'class="active"' ?> href="<?php echo base_url('daftar-penghuni') ?>"><i class="sidebar-item-icon fa fa-user-circle"></i>

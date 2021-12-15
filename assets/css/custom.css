@@ -324,12 +324,12 @@ form#login-form, form#register-form, form#changepass-form{
   }
 
 /*Button XLS*/
-  .btn-xls{
+  .btn-xls, .btn-baru{
     margin-right: 16px;
   }
 
 /*AKSI TABEL*/
-  .btn + .riwayat-bayar, .edit-huni, .hapus-penghuni, .detail-penghuni, .edit-riwayat, .hapus-pembayaran{
+  .btn + .riwayat-bayar, .edit-huni, .edit-gedung, .edit-tipe, .edit-kamar, .hapus-gedung, .hapus-tipe, .hapus-kamar, .hapus-penghuni, .detail-penghuni, .edit-riwayat, .hapus-pembayaran{
     margin-bottom: 4px;
   }
 

@@ -53,8 +53,11 @@ $route['default_controller'] = 'welcome';
 
 $route['dasbor'] = 'c_admin/dasbor';
 $route['daftar-user'] = 'c_admin/daftar_user';
+$route['send-email'] = 'c_admin/send_email';                                // test verif email
 $route['pilih-kamar'] = 'c_admin/pilih_kamar';
-$route['daftar-kamar'] = 'c_admin/daftar_kamar';
+$route['daftar-gedung'] = 'c_admin/daftar_gedung';                          // baru
+$route['daftar-kamar'] = 'c_admin/daftar_kamar';                            // baru
+$route['daftar-tipe'] = 'c_admin/daftar_tipe';                              // baru
 $route['daftar-harga'] = 'c_admin/daftar_harga';
 $route['daftar-penghuni'] = 'c_admin/daftar_penghuni';
 $route['daftar-ekspenghuni'] = 'c_admin/daftar_ekspenghuni';
@@ -69,10 +72,16 @@ $route['laporan-keuangan-cetak'] = 'c_admin/laporan_keuangan_cetak';
 
 $route['ubah-pass'] = 'c_admin/ubah_pass';
 $route['tambah-user'] = 'c_admin/tambah_user';
+$route['tambah-kamar'] = 'c_admin/tambah_kamar';                            // baru
+$route['tambah-gedung'] = 'c_admin/tambah_gedung';                          // baru
+$route['tambah-tipe'] = 'c_admin/tambah_tipe';                              // baru
 $route['tambah-penghuni/(:any)'] = 'c_admin/tambah_penghuni/$1';
 $route['edit-penghuni/(:num)'] = 'c_admin/edit_penghuni/$1';
 $route['edit-pembayaran/(:num)'] = 'c_admin/edit_pembayaran/$1';
 $route['edit-harga-kamar/(:any)'] = 'c_admin/edit_harga_kamar/$1';
+$route['edit-kamar/(:any)'] = 'c_admin/edit_kamar/$1';                      // baru
+$route['edit-gedung/(:any)'] = 'c_admin/edit_gedung/$1';                    // baru
+$route['edit-tipe/(:num)'] = 'c_admin/edit_tipe/$1';                        // baru
 
 $route['get-prodi'] = 'c_aksi/get_prodi';
 $route['get-kamar'] = 'c_aksi/get_kamar';
@@ -88,6 +97,15 @@ $route['aksi-hapus-pembayaran/(:num)'] = 'c_aksi/aksi_hapus_pembayaran/$1';
 $route['aksi-ubah-pass'] = 'c_aksi/aksi_ubah_pass';
 $route['aksi-tambah-user'] = 'c_aksi/aksi_tambah_user';
 $route['aksi-hapus-user/(:any)'] = 'c_aksi/aksi_hapus_user/$1';
+$route['aksi-tambah-kamar'] = 'c_aksi/aksi_tambah_kamar';                   // baru
+$route['aksi-edit-kamar'] = 'c_aksi/aksi_edit_kamar';                       // baru
+$route['aksi-hapus-kamar/(:any)'] = 'c_aksi/aksi_hapus_kamar/$1';           // baru
+$route['aksi-tambah-gedung'] = 'c_aksi/aksi_tambah_gedung';                 // baru
+$route['aksi-edit-gedung'] = 'c_aksi/aksi_edit_gedung';                     // baru
+$route['aksi-hapus-gedung/(:any)'] = 'c_aksi/aksi_hapus_gedung/$1';         // baru
+$route['aksi-tambah-tipe'] = 'c_aksi/aksi_tambah_tipe';                     // baru
+$route['aksi-edit-tipe'] = 'c_aksi/aksi_edit_tipe';                         // baru
+$route['aksi-hapus-tipe/(:num)'] = 'c_aksi/aksi_hapus_tipe/$1';             // baru
 $route['aksi-edit-harga-kamar'] = 'c_aksi/aksi_edit_harga_kamar';
 
 $route['login'] = 'c_login/login';

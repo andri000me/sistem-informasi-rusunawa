@@ -37,8 +37,13 @@ class M_data extends CI_Model {
         return $this->db->get_where('prodi', array('id_fakultas' => $id_fakultas));
     }
 
-    function data_kamar(){
-        return $this->db->get('detail_kamar');
+    function data_kamar($where){
+        $this->db->select('gedung, no_kamar, tipe_kamar, harga');
+        $this->db->from('kamar');
+        $this->db->join('tipe', 'kamar.id_tipe = tipe.id_tipe');
+        $this->db->where($where);
+        $this->db->order_by('no_kamar');
+        return $this->db->get();
     }
 
     function data_kamar_tersedia(){
@@ -48,8 +53,21 @@ class M_data extends CI_Model {
         return $this->db->get('kamar');
     }
 
+    function data_gedung($where){
+        $this->db->select('gedung.gedung, gedung.nama_gedung, count(kamar.no_kamar) as jml_kamar');
+        $this->db->from('gedung');
+        $this->db->join('kamar', 'gedung.gedung = kamar.gedung', 'left');
+        $this->db->where($where);
+        $this->db->group_by('gedung');
+        return $this->db->get();
+    }
+
     function data_harga_kamar($where){
         return $this->db->get_where('harga', $where);
+    }
+
+    function data_tipe_kamar($where){
+        return $this->db->get_where('tipe', $where);
     }
 
     function data_harga_kamar_by_no_kamar($no_kamar){
@@ -84,6 +102,21 @@ class M_data extends CI_Model {
         return $this->db->get('detail_penghuni');
     }
 
+    function insert_kamar($data){
+        $this->db->insert('kamar', $data);
+        return ($this->db->affected_rows() > 0) ? true : false;
+    }
+
+    function insert_gedung($data){
+        $this->db->insert('gedung', $data);
+        return ($this->db->affected_rows() > 0) ? true : false;
+    }
+
+    function insert_tipe($data){
+        $this->db->insert('tipe', $data);
+        return ($this->db->affected_rows() > 0) ? true : false;
+    }
+
     function insert_penghuni($data){
         $this->db->insert('penghuni', $data);
         return ($this->db->affected_rows() > 0) ? true : false;
@@ -104,6 +137,21 @@ class M_data extends CI_Model {
         return $this->db->update('harga', array('harga' => $harga)) ? true : false;
     }
 
+    function update_kamar($no_kamar, $data){
+        $this->db->where('no_kamar', $no_kamar);
+        return $this->db->update('kamar', $data) ? true : false;
+    }
+
+    function update_gedung($gedung, $data){
+        $this->db->where('gedung', $gedung);
+        return $this->db->update('gedung', $data) ? true : false;
+    }
+
+    function update_tipe($id_tipe, $data){
+        $this->db->where('id_tipe', $id_tipe);
+        return $this->db->update('tipe', $data) ? true : false;
+    }
+
     function update_penghuni($id, $data){
         $this->db->where('id', $id);
         return $this->db->update('penghuni', $data) ? true : false;
@@ -122,6 +170,21 @@ class M_data extends CI_Model {
     function update_password($username, $password_baru){
         $this->db->where('username', $username);
         return $this->db->update('admin', array('password' => $password_baru)) ? true : false;
+    }
+
+    function delete_kamar($no_kamar){
+        $this->db->delete('kamar', array('no_kamar' => $no_kamar));
+        return ($this->db->affected_rows() > 0) ? true : false;
+    }
+
+    function delete_gedung($gedung){
+        $this->db->delete('gedung', array('gedung' => $gedung));
+        return ($this->db->affected_rows() > 0) ? true : false;
+    }
+
+    function delete_tipe($id_tipe){
+        $this->db->delete('tipe', array('id_tipe' => $id_tipe));
+        return ($this->db->affected_rows() > 0) ? true : false;
     }
 
     function delete_penghuni($id){

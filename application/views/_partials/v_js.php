@@ -74,6 +74,65 @@
         });
     </script>
     <script type="text/javascript">
+        $(document).on("click", ".hapus-kamar", function(){
+            var no_kamar = $(this).attr('id');
+            Swal.fire({
+                title: 'Hapus Kamar',
+                text: 'Apakah Anda yakin ingin menghapus kamar ' + no_kamar + '?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#dd3333',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, Hapus',
+                cancelButtonText: 'Batal',
+            }).then((result) => {
+                if (result.value) {
+                    window.location.href = '<?php echo base_url("aksi-hapus-kamar/") ?>' + no_kamar;
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).on("click", ".hapus-gedung", function(){
+            var gedung = $(this).attr('id');
+            Swal.fire({
+                title: 'Hapus Kamar',
+                text: 'Apakah Anda yakin ingin menghapus Kode Gedung ' + gedung + '?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#dd3333',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, Hapus',
+                cancelButtonText: 'Batal',
+            }).then((result) => {
+                if (result.value) {
+                    window.location.href = '<?php echo base_url("aksi-hapus-gedung/") ?>' + gedung;
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).on("click", ".hapus-tipe", function(){
+            var id_tipe = $(this).attr('id');
+            var kolom = $(this).closest("tr");
+            var tipe_kamar = kolom.find("td:eq(1)").html();
+            Swal.fire({
+                title: 'Hapus Kamar',
+                html: 'Apakah Anda yakin ingin menghapus<br>tipe kamar ' + tipe_kamar + '?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#dd3333',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, Hapus',
+                cancelButtonText: 'Batal',
+            }).then((result) => {
+                if (result.value) {
+                    window.location.href = '<?php echo base_url("aksi-hapus-tipe/") ?>' + id_tipe;
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
         $(document).ready(function(){
             $(".hapus-pembayaran").click(function(){
                 var id_pembayaran = $(this).attr('id');
@@ -267,6 +326,14 @@
 		}
         $(document).ready(function(){
             // Select 2
+            $(".select2_gedung").select2({
+                placeholder: "Pilih Gedung",
+                allowClear: false
+            });
+            $(".select2_tipe").select2({
+                placeholder: "Pilih Tipe Kamar",
+                allowClear: false
+            });
             $(".select2_kamar").select2({
                 placeholder: "Pilih Kamar Baru",
                 allowClear: true

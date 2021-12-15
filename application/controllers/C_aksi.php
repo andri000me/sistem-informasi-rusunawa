@@ -53,6 +53,156 @@ class C_aksi extends CI_Controller {
         redirect (base_url('daftar-harga'));
     }
 
+    function aksi_tambah_kamar(){
+        $no_kamar       = $this->input->post('no_kamar');
+        $gedung         = $this->input->post('gedung');
+        $id_tipe        = $this->input->post('id_tipe');
+
+        $data = array(
+            'no_kamar'  => $no_kamar,
+            'gedung'    => $gedung,
+            'id_tipe'   => $id_tipe
+        );
+
+        if ($this->m_data->insert_kamar($data) == true){
+            $this->session->set_flashdata('pesan', 'toastr.success("Berhasil menambah kamar '.$no_kamar.'")');
+        }
+        else {
+            $this->session->set_flashdata('pesan', 'toastr.error("Terjadi kesalahan")');
+        }
+        redirect (base_url('daftar-kamar'));
+    }
+
+    function aksi_edit_kamar(){
+        $no_kamar       = $this->input->post('no_kamar');
+        $no_kamar_baru  = $this->input->post('no_kamar_baru');
+        $gedung         = $this->input->post('gedung');
+        $id_tipe        = $this->input->post('id_tipe');
+
+        $data = array(
+            'no_kamar'  => $no_kamar_baru,
+            'gedung'    => $gedung,
+            'id_tipe'   => $id_tipe
+        );
+
+        if ($this->m_data->update_kamar($no_kamar, $data) == true){
+            $this->session->set_flashdata('pesan', 'toastr.success("Berhasil memperbarui kamar '.$no_kamar.'")');
+        }
+        else {
+            $this->session->set_flashdata('pesan', 'toastr.error("Terjadi kesalahan")');
+        }
+        redirect (base_url('daftar-kamar'));
+    }
+
+    function aksi_hapus_kamar($no_kamar = null){
+        if ($this->m_data->delete_kamar($no_kamar) == true){
+            $this->session->set_flashdata('pesan', 'toastr.success("Berhasil menghapus kamar '.$no_kamar.'")');
+        }
+        else {
+            $this->session->set_flashdata('pesan', 'toastr.error("Terjadi kesalahan")');
+        }
+        redirect (base_url('daftar-kamar'));
+    }
+
+    function aksi_tambah_gedung(){
+        $gedung         = $this->input->post('gedung');
+        $nama_gedung    = $this->input->post('nama_gedung');
+
+        $data = array(
+            'gedung'        => $gedung,
+            'nama_gedung'   => $nama_gedung
+        );
+
+        if ($this->m_data->insert_gedung($data) == true){
+            $this->session->set_flashdata('pesan', 'toastr.success("Berhasil menambah '.$nama_gedung.'")');
+        }
+        else {
+            $this->session->set_flashdata('pesan', 'toastr.error("Terjadi kesalahan")');
+        }
+        redirect (base_url('daftar-gedung'));
+    }
+
+    function aksi_edit_gedung(){
+        $gedung         = $this->input->post('gedung');
+        $gedung_baru    = $this->input->post('gedung_baru');
+        $nama_gedung    = $this->input->post('nama_gedung');
+
+        $data = array(
+            'gedung'        => $gedung_baru,
+            'nama_gedung'   => $nama_gedung
+        );
+
+        if ($this->m_data->update_gedung($gedung, $data) == true){
+            $this->session->set_flashdata('pesan', 'toastr.success("Berhasil memperbarui '.$nama_gedung.'")');
+        }
+        else {
+            $this->session->set_flashdata('pesan', 'toastr.error("Terjadi kesalahan")');
+        }
+        redirect (base_url('daftar-gedung'));
+    }
+
+    function aksi_hapus_gedung($gedung = null){
+        if ($this->m_data->delete_gedung($gedung) == true){
+            $this->session->set_flashdata('pesan', 'toastr.success("Berhasil menghapus Kode Gedung '.$gedung.'")');
+        }
+        else {
+            $this->session->set_flashdata('pesan', 'toastr.error("Terjadi kesalahan. Pastikan tidak ada kamar di gedung tersebut.")');
+        }
+        redirect (base_url('daftar-gedung'));
+    }
+
+    function aksi_tambah_tipe(){
+        $tipe_kamar     = $this->input->post('tipe_kamar');
+        $harga          = $this->input->post('harga');
+
+        $data = array(
+            'tipe_kamar'    => $tipe_kamar,
+            'harga '        => $harga
+        );
+
+        if ($this->m_data->insert_tipe($data) == true){
+            $this->session->set_flashdata('pesan', 'toastr.success("Berhasil menambah tipe kamar '.$tipe_kamar.'")');
+        }
+        else {
+            $this->session->set_flashdata('pesan', 'toastr.error("Terjadi kesalahan")');
+        }
+        redirect (base_url('daftar-tipe'));
+    }
+
+    function aksi_edit_tipe(){
+        $id_tipe    = $this->input->post('id_tipe');
+        $tipe_kamar = $this->input->post('tipe_kamar');
+        $harga      = $this->input->post('harga');
+
+        $data = array(
+            'tipe_kamar'    => $tipe_kamar,
+            'harga'         => $harga
+        );
+
+        $tipe = $this->m_data->data_tipe_kamar(array('id_tipe' => $id_tipe))->row();
+
+        if ($this->m_data->update_tipe($id_tipe, $data) == true){
+            $this->session->set_flashdata('pesan', 'toastr.success("Berhasil memperbarui tipe kamar '.$tipe->tipe_kamar.'")');
+        }
+        else {
+            $this->session->set_flashdata('pesan', 'toastr.error("Terjadi kesalahan")');
+        }
+        redirect (base_url('daftar-tipe'));
+    }
+
+    function aksi_hapus_tipe($id_tipe = null){
+
+        $tipe = $this->m_data->data_tipe_kamar(array('id_tipe' => $id_tipe))->row();
+
+        if ($this->m_data->delete_tipe($id_tipe) == true){
+            $this->session->set_flashdata('pesan', 'toastr.success("Berhasil menghapus tipe kamar '.$tipe->tipe_kamar.'")');
+        }
+        else {
+            $this->session->set_flashdata('pesan', 'toastr.error("Terjadi kesalahan")');
+        }
+        redirect (base_url('daftar-tipe'));
+    }
+
     function aksi_tambah_penghuni(){
         $no_kamar       = $this->input->post('no_kamar');
         $isi_kamar      = $this->input->post('isi_kamar');
